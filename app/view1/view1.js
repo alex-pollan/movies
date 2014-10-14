@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.view1', ['ngRoute', 'movieApi'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,10 +9,16 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', function($scope) {
-    $scope.searchText = "";
-    
-    $scope.search = function(){
-        alert($scope.searchText);
-    };
+.controller('View1Ctrl', [
+    '$scope',
+    'movieService',
+    function($scope, movieService) {
+        $scope.searchText = "";
+        $scope.movies = null;
+
+        $scope.search = function(){
+            return movieService.search().then(function(movies) {
+                $scope.movies = movies;
+            });
+        };
 }]);

@@ -1,13 +1,13 @@
-var MockMovieService = function() {
-  return {
-      search: function(searchText) {
-          //TODO:
-          return [
-            {
-                Title: "Armaghedon",
-                Year: 1994
+angular.module('movieApi', ['ngRoute']).service("movieService",
+    function ($http) {
+        "use strict";
+    
+        return {
+            search: function (searchText) {
+                return $http.get("http://www.omdbapi.com/?t=" + searchText).then(function (response) {
+                    var movies = [ response.data.data ];
+                    return movies;
+                });
             }
-          ];
-      }
-  };
-}
+        };
+    });
