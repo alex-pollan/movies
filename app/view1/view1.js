@@ -11,14 +11,12 @@ angular.module('myApp.view1', ['ngRoute', 'movieApi'])
 
 .controller('View1Ctrl', [
     '$scope',
-    'movieService',
-    function($scope, movieService) {
+    'TMDbService',
+    function($scope, TMDbService) {
         $scope.searchText = "";
         $scope.movies = null;
-
-        $scope.search = function(){
-            return movieService.search().then(function(movies) {
-                $scope.movies = movies;
-            });
-        };
+        
+        TMDbService.get({verb: "popular"}, function(data) {
+            $scope.movies = data.results;
+        });
 }]);
