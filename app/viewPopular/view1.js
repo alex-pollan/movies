@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'movieApi'])
+angular.module('myApp.viewPopular', ['ngRoute', 'movieApi'])
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/view1', {
-            templateUrl: 'view1/view1.html',
-            controller: 'View1Ctrl'
+        $routeProvider.when('/popular', {
+            templateUrl: 'viewPopular/view1.html',
+            controller: 'ViewPopularCtrl'
         });
     }])
-    .controller('View1Ctrl', [
+    .controller('ViewPopularCtrl', [
         '$scope',
         'TMDbConfigService',
         'TMDbService',
@@ -27,13 +27,7 @@ angular.module('myApp.view1', ['ngRoute', 'movieApi'])
             $scope.searchText = "";
             $scope.movies = null;
             $scope.page = 1;
-
-            $scope.resolveBackdropImageUrl = function (file) {
-                if (!imagesConfig) {
-                    return;
-                }
-                return imagesConfig.base_url + "/" + imagesConfig.backdrop_sizes[0] + "/" + file;
-            };
+            $scope.configService = TMDbConfigService;
             
             $scope.nextPageAvail = function () {
                 return moviesRaw && $scope.page < moviesRaw.total_pages;
@@ -53,12 +47,7 @@ angular.module('myApp.view1', ['ngRoute', 'movieApi'])
                 if ($scope.prevPageAvail()) {
                     moveToPage($scope.page - 1);
                 }
-            };            
-                    
-            TMDbConfigService.get({verb: ""}, function (data) {
-                imagesConfig = data.images;
-            });
-            
+            };                  
             
             moveToPage(1);
         }]);

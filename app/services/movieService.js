@@ -11,10 +11,32 @@ angular.module('movieApi', ['ngResource'])
     }])
     .factory("TMDbConfigService", ["$resource", function ($resource) {
         "use strict";
-
-        return $resource(AppConsts.TMDbApiBaseUrl.replace("{0}", "configuration"), {}, {
-            query: {method : 'GET', params: {verb: ""}, isArray : true}
+        
+        var imagesConfig,
+            getBackdropImageUrl = function (file) {
+                if (!imagesConfig) {
+                    return;
+                }
+                return imagesConfig.base_url + "/" + imagesConfig.backdrop_sizes[0] + "/" + file;
+            },
+            getPosterImageUrl = function (file) {
+                if (!imagesConfig) {
+                    return;
+                }
+                return imagesConfig.base_url + "/" + imagesConfig.poster_sizes[2] + "/" + file;
+            },
+            res = $resource(AppConsts.TMDbApiBaseUrl.replace("{0}", "configuration"), {}, {
+                query: {method : 'GET', params: {verb: ""}, isArray : true}
+            });
+        
+        res.get({verb: ""}, function (data) {
+            imagesConfig = data.images;
         });
+        
+        return {
+            getBackdropImageUrl: getBackdropImageUrl,
+            getPosterImageUrl: getPosterImageUrl
+        };
     }])
     .factory("TMDbService", ["$resource", function ($resource) {
         "use strict";
@@ -22,6 +44,9 @@ angular.module('movieApi', ['ngResource'])
         return {
             movies: $resource(AppConsts.TMDbApiBaseUrl.replace("{0}", "movie/") + "&page=:page", {}, {
                 query: {method : 'GET', params: {verb: "popular", page: 0}, isArray : true}
+            }),
+            movie: $resource(AppConsts.TMDbApiBaseUrl.replace("{0}", "movie/"), {}, {
+                query: {method : 'GET', params: {verb: ""}, isArray : true}
             })
         };
     }]);

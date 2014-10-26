@@ -1,0 +1,17 @@
+<h2>Popular movies</h2>
+<div class="btn-group">
+    <button ng-click="prevPage()" ng-show="prevPageAvail()" class="btn">Previous</button>
+    <button ng-click="nextPage()" ng-show="nextPageAvail()" class="btn" >Next</button>
+</div>
+<ul class="list-movies">
+    <li ng-repeat="movie in movies">
+        <a href="#/details/{{movie.id}}">
+            <img ng-src="{{configService.getPosterImageUrl(movie.poster_path)}}" /> 
+            <div class="movie-title"><span>{{movie.title}}</span></div>
+        </a>
+    </li>
+</ul>
+<div class="btn-group">
+    <button ng-click="prevPage()" ng-show="prevPageAvail()" class="btn">Previous</button>
+    <button ng-click="nextPage()" ng-show="nextPageAvail()" class="btn">Next</button>
+</div>
