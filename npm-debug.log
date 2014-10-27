@@ -1,205 +1,28 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'install' ]
+1 verbose cli   'start' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
 4 verbose node symlink C:\Program Files\nodejs\\node.exe
-5 verbose readDependencies using package.json deps
-6 verbose install where, deps [ 'C:\\Users\\Rocío\\Documents\\GitHub\\movies',
-6 verbose install   [ 'karma',
-6 verbose install     'protractor',
-6 verbose install     'http-server',
-6 verbose install     'bower',
-6 verbose install     'shelljs',
-6 verbose install     'karma-junit-reporter' ] ]
-7 info preinstall angular-seed@0.0.0
-8 warn package.json karma-chrome-launcher@0.1.5 No README data
-9 warn package.json karma-phantomjs-launcher@0.1.4 No README data
-10 verbose readDependencies using package.json deps
-11 verbose already installed skipping karma@~0.10 C:\Users\Rocío\Documents\GitHub\movies
-12 verbose already installed skipping protractor@^1.1.1 C:\Users\Rocío\Documents\GitHub\movies
-13 verbose already installed skipping http-server@^0.6.1 C:\Users\Rocío\Documents\GitHub\movies
-14 verbose already installed skipping bower@^1.3.1 C:\Users\Rocío\Documents\GitHub\movies
-15 verbose already installed skipping shelljs@^0.2.6 C:\Users\Rocío\Documents\GitHub\movies
-16 verbose already installed skipping karma-junit-reporter@^0.2.2 C:\Users\Rocío\Documents\GitHub\movies
-17 silly resolved []
-18 info build C:\Users\Rocío\Documents\GitHub\movies
-19 verbose linkStuff [ false, false, false, 'C:\\Users\\Rocío\\Documents\\GitHub' ]
-20 info linkStuff angular-seed@0.0.0
-21 verbose linkBins angular-seed@0.0.0
-22 verbose linkMans angular-seed@0.0.0
-23 verbose rebuildBundles angular-seed@0.0.0
-24 verbose rebuildBundles [ '.bin',
-24 verbose rebuildBundles   'bootstrap',
-24 verbose rebuildBundles   'bower',
-24 verbose rebuildBundles   'http-server',
-24 verbose rebuildBundles   'karma',
-24 verbose rebuildBundles   'karma-chrome-launcher',
-24 verbose rebuildBundles   'karma-coffee-preprocessor',
-24 verbose rebuildBundles   'karma-firefox-launcher',
-24 verbose rebuildBundles   'karma-html2js-preprocessor',
-24 verbose rebuildBundles   'karma-jasmine',
-24 verbose rebuildBundles   'karma-junit-reporter',
-24 verbose rebuildBundles   'karma-phantomjs-launcher',
-24 verbose rebuildBundles   'karma-requirejs',
-24 verbose rebuildBundles   'karma-script-launcher',
-24 verbose rebuildBundles   'protractor',
-24 verbose rebuildBundles   'requirejs',
-24 verbose rebuildBundles   'shelljs' ]
-25 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\bootstrap
-26 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\bootstrap
-27 info preinstall bootstrap@3.2.0
-28 verbose linkStuff [ false,
-28 verbose linkStuff   false,
-28 verbose linkStuff   false,
-28 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-29 info linkStuff bootstrap@3.2.0
-30 verbose linkBins bootstrap@3.2.0
-31 verbose linkMans bootstrap@3.2.0
-32 verbose rebuildBundles bootstrap@3.2.0
-33 info install bootstrap@3.2.0
-34 info postinstall bootstrap@3.2.0
-35 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-chrome-launcher
-36 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-chrome-launcher
-37 info preinstall karma-chrome-launcher@0.1.5
-38 verbose linkStuff [ false,
-38 verbose linkStuff   false,
-38 verbose linkStuff   false,
-38 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-39 info linkStuff karma-chrome-launcher@0.1.5
-40 verbose linkBins karma-chrome-launcher@0.1.5
-41 verbose linkMans karma-chrome-launcher@0.1.5
-42 verbose rebuildBundles karma-chrome-launcher@0.1.5
-43 info install karma-chrome-launcher@0.1.5
-44 info postinstall karma-chrome-launcher@0.1.5
-45 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-coffee-preprocessor
-46 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-coffee-preprocessor
-47 info preinstall karma-coffee-preprocessor@0.1.3
-48 verbose linkStuff [ false,
-48 verbose linkStuff   false,
-48 verbose linkStuff   false,
-48 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-49 info linkStuff karma-coffee-preprocessor@0.1.3
-50 verbose linkBins karma-coffee-preprocessor@0.1.3
-51 verbose linkMans karma-coffee-preprocessor@0.1.3
-52 verbose rebuildBundles karma-coffee-preprocessor@0.1.3
-53 verbose rebuildBundles [ '.bin', 'coffee-script' ]
-54 info install karma-coffee-preprocessor@0.1.3
-55 info postinstall karma-coffee-preprocessor@0.1.3
-56 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-firefox-launcher
-57 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-firefox-launcher
-58 info preinstall karma-firefox-launcher@0.1.3
-59 verbose linkStuff [ false,
-59 verbose linkStuff   false,
-59 verbose linkStuff   false,
-59 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-60 info linkStuff karma-firefox-launcher@0.1.3
-61 verbose linkBins karma-firefox-launcher@0.1.3
-62 verbose linkMans karma-firefox-launcher@0.1.3
-63 verbose rebuildBundles karma-firefox-launcher@0.1.3
-64 info install karma-firefox-launcher@0.1.3
-65 info postinstall karma-firefox-launcher@0.1.3
-66 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-html2js-preprocessor
-67 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-html2js-preprocessor
-68 info preinstall karma-html2js-preprocessor@0.1.0
-69 verbose linkStuff [ false,
-69 verbose linkStuff   false,
-69 verbose linkStuff   false,
-69 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-70 info linkStuff karma-html2js-preprocessor@0.1.0
-71 verbose linkBins karma-html2js-preprocessor@0.1.0
-72 verbose linkMans karma-html2js-preprocessor@0.1.0
-73 verbose rebuildBundles karma-html2js-preprocessor@0.1.0
-74 info install karma-html2js-preprocessor@0.1.0
-75 info postinstall karma-html2js-preprocessor@0.1.0
-76 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-jasmine
-77 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-jasmine
-78 info preinstall karma-jasmine@0.1.5
-79 verbose linkStuff [ false,
-79 verbose linkStuff   false,
-79 verbose linkStuff   false,
-79 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-80 info linkStuff karma-jasmine@0.1.5
-81 verbose linkBins karma-jasmine@0.1.5
-82 verbose linkMans karma-jasmine@0.1.5
-83 verbose rebuildBundles karma-jasmine@0.1.5
-84 info install karma-jasmine@0.1.5
-85 info postinstall karma-jasmine@0.1.5
-86 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-phantomjs-launcher
-87 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-phantomjs-launcher
-88 info preinstall karma-phantomjs-launcher@0.1.4
-89 verbose linkStuff [ false,
-89 verbose linkStuff   false,
-89 verbose linkStuff   false,
-89 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-90 info linkStuff karma-phantomjs-launcher@0.1.4
-91 verbose linkBins karma-phantomjs-launcher@0.1.4
-92 verbose linkMans karma-phantomjs-launcher@0.1.4
-93 verbose rebuildBundles karma-phantomjs-launcher@0.1.4
-94 verbose rebuildBundles [ '.bin', 'phantomjs' ]
-95 info install karma-phantomjs-launcher@0.1.4
-96 info postinstall karma-phantomjs-launcher@0.1.4
-97 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-requirejs
-98 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-requirejs
-99 info preinstall karma-requirejs@0.2.2
-100 verbose linkStuff [ false,
-100 verbose linkStuff   false,
-100 verbose linkStuff   false,
-100 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-101 info linkStuff karma-requirejs@0.2.2
-102 verbose linkBins karma-requirejs@0.2.2
-103 verbose linkMans karma-requirejs@0.2.2
-104 verbose rebuildBundles karma-requirejs@0.2.2
-105 info install karma-requirejs@0.2.2
-106 info postinstall karma-requirejs@0.2.2
-107 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-script-launcher
-108 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\karma-script-launcher
-109 info preinstall karma-script-launcher@0.1.0
-110 verbose linkStuff [ false,
-110 verbose linkStuff   false,
-110 verbose linkStuff   false,
-110 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-111 info linkStuff karma-script-launcher@0.1.0
-112 verbose linkBins karma-script-launcher@0.1.0
-113 verbose linkMans karma-script-launcher@0.1.0
-114 verbose rebuildBundles karma-script-launcher@0.1.0
-115 info install karma-script-launcher@0.1.0
-116 info postinstall karma-script-launcher@0.1.0
-117 verbose rebuild bundle C:\Users\Rocío\Documents\GitHub\movies\node_modules\requirejs
-118 info build C:\Users\Rocío\Documents\GitHub\movies\node_modules\requirejs
-119 info preinstall requirejs@2.1.15
-120 verbose linkStuff [ false,
-120 verbose linkStuff   false,
-120 verbose linkStuff   false,
-120 verbose linkStuff   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules' ]
-121 info linkStuff requirejs@2.1.15
-122 verbose linkBins requirejs@2.1.15
-123 verbose link bins [ { 'r.js': './bin/r.js' },
-123 verbose link bins   'C:\\Users\\Rocío\\Documents\\GitHub\\movies\\node_modules\\.bin',
-123 verbose link bins   false ]
-124 verbose linkMans requirejs@2.1.15
-125 verbose rebuildBundles requirejs@2.1.15
-126 info install requirejs@2.1.15
-127 info postinstall requirejs@2.1.15
-128 info install angular-seed@0.0.0
-129 info postinstall angular-seed@0.0.0
-130 verbose unsafe-perm in lifecycle true
-131 info angular-seed@0.0.0 Failed to exec postinstall script
-132 error angular-seed@0.0.0 postinstall: `bower install`
-132 error Exit status 1
-133 error Failed at the angular-seed@0.0.0 postinstall script.
-133 error This is most likely a problem with the angular-seed package,
-133 error not with npm itself.
-133 error Tell the author that this fails on your system:
-133 error     bower install
-133 error You can get their info via:
-133 error     npm owner ls angular-seed
-133 error There is likely additional logging output above.
-134 error System Windows_NT 6.2.9200
-135 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
-136 error cwd C:\Users\Rocío\Documents\GitHub\movies
-137 error node -v v0.10.32
-138 error npm -v 1.4.28
-139 error code ELIFECYCLE
-140 verbose exit [ 1, true ]
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info prestart angular-seed@0.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info angular-seed@0.0.0 Failed to exec prestart script
+9 error angular-seed@0.0.0 prestart: `npm install`
+9 error Exit status 1
+10 error Failed at the angular-seed@0.0.0 prestart script.
+10 error This is most likely a problem with the angular-seed package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     npm install
+10 error You can get their info via:
+10 error     npm owner ls angular-seed
+10 error There is likely additional logging output above.
+11 error System Windows_NT 6.2.9200
+12 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+13 error cwd C:\Users\Rocío\Documents\GitHub\movies
+14 error node -v v0.10.32
+15 error npm -v 1.4.28
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]
