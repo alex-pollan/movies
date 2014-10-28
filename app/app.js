@@ -7,7 +7,7 @@ angular.module('myApp', [
     'myApp.viewPopular',
     'myApp.viewDetails',
     'myApp.version',
-    'movieApi'
+    'movieApi',
 ]).config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/popular'});
 }]);

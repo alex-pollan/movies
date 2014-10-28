@@ -54,6 +54,7 @@
 .list-movies li > a img{
     max-width: 100%;
     min-height: 278px;
+    max-height: 278px;
 }
 
 .list-movies li > a .movie-title{
