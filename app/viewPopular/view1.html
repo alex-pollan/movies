@@ -1,5 +1,5 @@
 <h2>Popular movies</h2>
-<ul class="list-movies" mv-Load-On-Scroll="loadMoreData()">
+<ul class="list-movies" infinite-scroll="loadMoreData()" infinite-scroll-distance="0">
     <li ng-repeat="movie in movies" class="repeated-item">
         <a href="#/details/{{movie.id}}">
             <img ng-src="{{movie.poster_path}}" /> 

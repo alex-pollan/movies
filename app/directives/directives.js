@@ -1,32 +1,64 @@
 angular.module('myApp')
-    .directive("mvLoadOnScroll", ['$window', '$timeout', function ($window, $timeout) {
-        "use strict";
-
-        return {
-            restrict: 'ACE',
-            link: function (scope, element, attr) {
-                var top = angular.element($window)[0].screenTop,
-                    origHeight = angular.element($window)[0].screen.height,
-                    height = (origHeight * 0.7);
-
-                // bind the digest cycle to be triggered by the scroll event
-                // when it exceeds a threshold
-                angular.element($window).bind('scroll', function () {
-                    if (angular.element($window)[0].pageYOffset >= (height)) {
-
-                        // show the spinner when triggered
-                        //scope.spinner.hide = !scope.spinner.hide;
-
-                        angular.element($window)[0].requestAnimationFrame(function () {
-                            // invoke the function passed into the 'whenScrolled' attribute
-                            scope.$apply(attr.mvLoadOnScroll);
-
-                            // increment the threshold
-                            height += (origHeight * 1.5);
+    .directive("infiniteScroll", [
+        '$rootScope', '$window', '$timeout',
+        function ($rootScope, $window, $timeout) {
+            "use strict";
+            return {
+                link: function (scope, elem, attrs) {
+                    var checkWhenEnabled, handler, scrollDistance, scrollEnabled;
+                    $window = angular.element($window);
+                    scrollDistance = 0;
+                    if (attrs.infiniteScrollDistance !== null) {
+                        scope.$watch(attrs.infiniteScrollDistance, function (value) {
+                            scrollDistance = parseInt(value, 10);
+                            return scrollDistance;
                         });
                     }
-                });
-            }
-
-        };
-    }]);
+                    scrollEnabled = true;
+                    checkWhenEnabled = false;
+                    if (attrs.infiniteScrollDisabled !== null) {
+                        scope.$watch(attrs.infiniteScrollDisabled, function (value) {
+                            scrollEnabled = !value;
+                            if (scrollEnabled && checkWhenEnabled) {
+                                checkWhenEnabled = false;
+                                return handler();
+                            }
+                        });
+                    }
+                    handler = function () {
+                        var elementBottom, remaining, shouldScroll, windowBottom,
+                            win = $($window),
+                            el = $(elem);
+                        
+                        windowBottom = win.height() + win.scrollTop();
+                        elementBottom = el.offset().top + el.height();
+                        remaining = elementBottom - windowBottom;
+                        shouldScroll = remaining <= win.height() * scrollDistance;
+                        if (shouldScroll && scrollEnabled) {
+                            if ($rootScope.$$phase) {
+                                return scope.$eval(attrs.infiniteScroll);
+                            } else {
+                                return scope.$apply(attrs.infiniteScroll);
+                            }
+                        } else if (shouldScroll) {
+                            checkWhenEnabled = true;
+                            return checkWhenEnabled;
+                        }
+                    };
+                    $window.on('scroll', handler);
+                    scope.$on('$destroy', function () {
+                        return $window.off('scroll', handler);
+                    });
+                    return $timeout((function () {
+                        if (attrs.infiniteScrollImmediateCheck) {
+                            if (scope.$eval(attrs.infiniteScrollImmediateCheck)) {
+                                return handler();
+                            }
+                        } else {
+                            return handler();
+                        }
+                    }), 0);
+                }
+            };
+        }
+    ]);
