@@ -1,5 +1,8 @@
 /* app css stylesheet */
 
+/*HACK: http://angular-ui.github.io/bootstrap*/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,6 +30,11 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+
+.searcher ul li img {
+    width: 30px;
 }
 
 
@@ -96,4 +104,20 @@
     border: solid 2px #fff;
     border-radius: 50%;
     font-size: 14px;
+}
+
+
+
+.movie-detail {
+    background-color: #fff;
+    width: 500px;
+}
+
+.movie-detail .modal-body {
+    height: 500px;
+    overflow: auto;
+}
+
+.movie-detail .modal-body > img {
+    /*height: 170px;*/
 }

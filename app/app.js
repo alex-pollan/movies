@@ -4,6 +4,7 @@
 angular.module('myApp', [
     'ngRoute',
     'ngAnimate',
+    'ui.bootstrap',
     'myApp.viewPopular',
     'myApp.viewDetails',
     'myApp.version',

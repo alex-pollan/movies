@@ -148,3 +148,24 @@ animate.
         opacity: 0;
     }
 }
+.popular-movies {
+    position: relative;
+}
+.movie-detail {
+    position: fixed;
+    top: 30%;
+    left: 32%;
+    background-color: #fff;
+    width: 500px;
+}
+.movie-detail.ng-hide-add.ng-hide-add-active {
+    -webkit-transition: all linear 0.3s;
+    transition: all linear 0.3s;
+}
+.movie-detail.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transition: 0.5s all linear 0.1s;
+    transition: 0.5s all linear 0.1s;
+}
+.movie-detail.ng-hide {
+    opacity: 0;
+}

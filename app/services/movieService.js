@@ -17,13 +17,13 @@ angular.module('movieApi', ['ngResource'])
                 if (!imagesConfig) {
                     return;
                 }
-                return imagesConfig.base_url + "/" + imagesConfig.backdrop_sizes[0] + "/" + file;
+                return imagesConfig.base_url + imagesConfig.backdrop_sizes[0] + "/" + file;
             },
             getPosterImageUrl = function (file) {
                 if (!imagesConfig) {
                     return;
                 }
-                return imagesConfig.base_url + "/" + imagesConfig.poster_sizes[2] + "/" + file;
+                return imagesConfig.base_url + imagesConfig.poster_sizes[2] + "/" + file;
             },
             res = $resource(AppConsts.TMDbApiBaseUrl.replace("{0}", "configuration"), {callback: "JSON_CALLBACK"}, {
                 get: {method : 'JSONP', isArray : false}
@@ -48,6 +48,10 @@ angular.module('movieApi', ['ngResource'])
                 //query: {method : 'JSONP', params: {verb: "popular", page: 0}, isArray : true}
             }),
             movie: $resource(AppConsts.TMDbApiBaseUrl.replace("{0}", "movie/"), {callback: "JSON_CALLBACK"}, {
+                get: {method : 'JSONP', isArray : false}
+                //query: {method : 'JSONP', params: {verb: ""}, isArray : true}
+            }),
+            movieSearch: $resource(AppConsts.TMDbApiBaseUrl.replace("{0}", "search/movie") + "&query=:query", {callback: "JSON_CALLBACK"}, {
                 get: {method : 'JSONP', isArray : false}
                 //query: {method : 'JSONP', params: {verb: ""}, isArray : true}
             })
