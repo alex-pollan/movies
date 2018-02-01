@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Dell.Premier.Shop.Web.sourcemap</id>
+    <id>movies</id>
     <version>1.0.0.0</version>
     <title>Movies</title>
     <authors>alex-pollan</authors>
