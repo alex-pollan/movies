@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="797b46e2-68c4-46c2-b85a-11f5d8eb3bf2" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/2017.2/project-config.xsd">
+  <name>MyBuildTemplate</name>
+  <settings>
+    <parameters />
+    <build-runners order="RUNNER_1">
+      <runner id="RUNNER_1" name="Pack" type="jb.nuget.pack">
+        <parameters>
+          <param name="nuget.pack.output.directory" value="C:\temp" />
+          <param name="nuget.pack.project.dir" value="as_is" />
+          <param name="nuget.pack.properties" value="Configuration=Release" />
+          <param name="nuget.pack.specFile" value="package.nuspec" />
+          <param name="nuget.path" value="%teamcity.tool.NuGet.CommandLine.DEFAULT%" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Movies_HttpsGithubComAlexPollanMoviesRefsHeadsMaster" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</template>
+
